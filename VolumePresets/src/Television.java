@@ -1,0 +1,150 @@
+import java.util.Arrays;
+
+/*
+ * Business class to model the workings of a television set.
+ * No main() method here.
+ */
+class Television {
+    // Class (static) variables - shared among all instances - these live up in that shared common area
+    public static final int MIN_VOLUME = 0;
+    public static final int MAX_VOLUME = 100;
+    //public static final String[] VALID_BRANDS = {"Samsung", "LG", "Sony", "Toshiba"};
+
+    private static int instanceCount = 0;
+
+    public static int getInstanceCount() {
+        return instanceCount;
+    }
+
+//    private static boolean isValidBrand(String brand) {
+//        boolean foundBrand = false;
+//        for (String brands : VALID_BRANDS) {
+//            if (brand.equalsIgnoreCase(brands)) {
+//                foundBrand = true;
+//                break;
+//            }
+//        }
+//        return foundBrand;
+//    }
+
+    // attributes or properties, called "fields" or "instance variables"
+    private String brand = "Toshiba";
+    private Integer volume;
+    private DisplayType display = DisplayType.LED;  // null if we don't provide a default.
+
+    private Boolean isMuted = false;
+    private Integer oldVolume;
+
+    // Constructors
+    public Television() {
+        instanceCount++;
+    }
+
+    public Television(String brand) {
+        this();
+        setBrand(brand);        // delegate to setter for any validation/conversion it might be doing
+    }
+
+    public Television(String brand, Integer volume) {
+        this(brand);            // delegate to ctor above me for brand
+        setVolume(volume);      // handle volume myself, by delegating to its setter
+    }
+
+    public Television(String brand, Integer volume, DisplayType display) {
+        this(brand, volume);    // delegate to ctor above me for brand and volume
+        setDisplay(display);    // handle display myself, by delegating to its setter
+    }
+
+    // business-oriented methods
+    public void turnOn() {
+        boolean isConnected = this.verifyInternetConnection();
+        System.out.println("Turning on your " + getBrand() + " TV to volume " + getVolume());
+    }
+
+    public void turnOff() {
+        System.out.println("Shutting down your " + getBrand() + " TV");
+    }
+
+    public void mute() {
+        if (!isMuted) {
+            oldVolume = getVolume();
+            setVolume(0);
+            isMuted = true;
+        }
+        else {
+            setVolume(oldVolume);
+            isMuted = false;
+        }
+    }
+
+    // accessor methods - provide "controlled access" to the object's internal (private) data
+    public String getBrand() {
+        return brand;
+    }
+
+//    // data constraint: must be "Samsung", "LG", "Sony", "Toshiba"
+//    // would use Enum in real life application since they are set constants.
+//    public void setBrand(String brand) {
+//        if(isValidBrand(brand)) {
+//            this.brand = brand;
+//        }
+//        else {
+//            System.out.println("Invalid Brand: " + brand + ", Valid Brands: "
+//                    + Arrays.toString(VALID_BRANDS));
+//        }
+//    }
+
+    public void setBrand(String brand) {
+        if(brand.equalsIgnoreCase("Samsung") || brand.equalsIgnoreCase("LG")
+                || brand.equalsIgnoreCase("Sony") || brand.equalsIgnoreCase("Toshiba")) {
+            this.brand = brand;
+        }
+        else {
+            System.out.println("Invalid Brand: " + brand + ", Valid Brands: Samsung, LG, Sony, Toshiba");
+        }
+    }
+
+    public Integer getVolume() {
+        return volume;
+    }
+
+    public Integer setVolume(VolumeLevel volume) {
+        return this.volume = Integer.valueOf(String.valueOf(volume));
+    }
+
+    public void setVolume(Integer volume) {
+        if (volume <= MAX_VOLUME && volume >= MIN_VOLUME) {
+            this.volume = volume;
+            isMuted = false;
+        }
+        else {
+            System.out.printf("Invalid volume: %s, valid range is %s-%s\n", volume, MIN_VOLUME, MAX_VOLUME );
+        }
+    }
+
+    public boolean isMuted() {
+        return isMuted;
+    }
+
+    public DisplayType getDisplay() {
+        return display;
+    }
+
+    public void setDisplay(DisplayType display) {
+        this.display = display;
+    }
+
+    //Private Methods usually placed before or after toString method
+    private boolean verifyInternetConnection() {
+        return true;    // fake implementation (obviously)
+    }
+
+    //toString
+    public String toString() {
+
+        String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume()); // Ternary Operator
+
+        return String.format("Television: brand=%s, volume=%s, Display Type=%s",
+                getBrand(),volumeString,getDisplay());
+    }
+}
