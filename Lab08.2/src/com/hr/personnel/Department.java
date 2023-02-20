@@ -10,17 +10,17 @@ package com.hr.personnel;
 
 /**
  * The Department class manages employees.
- *
+ * <p>
  * Properties:
- *   String name
- *   String location
- *   Employee[] employees  the Employees in this department.
- *   int currentIndex      internal counter for number of employees in the department.
- *
+ * String name
+ * String location
+ * Employee[] employees  the Employees in this department.
+ * int currentIndex      internal counter for number of employees in the department.
+ * <p>
  * Methods (excluding get/set methods):
- *   void listEmployees()  print info on all employees in the department.
- *   void workEmployees()  make all employees in the department work.
- *   String toString()     self-explanatory.
+ * void listEmployees()  print info on all employees in the department.
+ * void workEmployees()  make all employees in the department work.
+ * String toString()     self-explanatory.
  */
 public class Department {
     // fields
@@ -54,7 +54,7 @@ public class Department {
     }
 
     // helper method to add an Employee to the array
-    public void addEmployee(Employee emp) {
+    public void addEmployee(Employee emp) {     // Employee ref to one of Employee, Hourly, Salaried
         employees[currentIndex++] = emp;
     }
 

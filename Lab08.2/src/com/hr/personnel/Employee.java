@@ -12,14 +12,14 @@ import java.time.LocalDate;
 
 /**
  * The Employee class is fairly simple, serving as a superclass to illustrate inheritance.
- *
+ * <p>
  * Properties:
- *   String name
- *   LocalDate hireDate
- *
+ * String name
+ * LocalDate hireDate
+ * <p>
  * Methods (excluding get/set methods):
- *   void work()        simulates work by printing a message to show it was called.
- *   String toString()  self-explanatory.
+ * void work()        simulates work by printing a message to show it was called.
+ * String toString()  self-explanatory.
  */
 public class Employee {
     // fields
