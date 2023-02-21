@@ -30,10 +30,10 @@ public class Department {
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
-    public Department() {
+    public Department() {       // a superclass ctor is always called, whether you say this or not!
     }
 
-    public Department(String name, String location) {
+    public Department(String name, String location) {       // superclass ctor is always called  "super();"
         setName(name);
         setLocation(location);
     }
@@ -41,6 +41,7 @@ public class Department {
     // business methods
     public void listEmployees() {
         // Note: we don't use for-each here because we only want to access the array where employees were added.
+        // where employees were added, i.e., we don't want to hit the "null" slots in the array
         // Question: what is in the array for indices where no Employee was added?  null!
         for (int i = 0; i < currentIndex; i++) {
             System.out.println(employees[i]);  // toString() automatically called
@@ -54,8 +55,17 @@ public class Department {
     }
 
     // helper method to add an Employee to the array
+
+    // 'emp' is a reference of type Employee, that's pointing to
+    // an Employee object
     public void addEmployee(Employee emp) {     // Employee ref to one of Employee, Hourly, Salaried
         employees[currentIndex++] = emp;
+    }
+
+    public void paysEmployees() {
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].pay();
+        }
     }
 
     // accessor methods
@@ -75,6 +85,7 @@ public class Department {
         this.location = location;
     }
 
+    @Override
     public String toString() {
         return "Department: name=" + getName() + ", location=" + getLocation();
     }
