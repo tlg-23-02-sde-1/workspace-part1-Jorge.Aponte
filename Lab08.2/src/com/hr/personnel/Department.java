@@ -68,6 +68,29 @@ public class Department {
         }
     }
 
+    /*
+     * "Forced vacation." That is, for all employees that take vacation (SalariedEmployees),
+     * make them take vacation.
+     */
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            // downcast the Employee reference (employees[i]) to specific type SalariedEmployee
+            // then we can call SalariedEmployee-specific methods (like takeVacation())
+
+            // First we "ask" employees[i], "are you really a SalariedEmployee?"
+            // NOTE: instanceof does an IS-A check (so it's true for an Executive, also)
+            if (employees[i] instanceof SalariedEmployee) {
+                // downcast-and-method-call in one shot (Great for calling one method)
+                ((SalariedEmployee) employees[i]).takeVacation();
+
+                /* This way below is great if calling more than one method.
+                 * SalariedEmployee semp = (SalariedEmployee) employees[i];
+                 * semp.takeVacation();
+                 */
+            }
+        }
+    }
+
     // accessor methods
     public String getName() {
         return name;
