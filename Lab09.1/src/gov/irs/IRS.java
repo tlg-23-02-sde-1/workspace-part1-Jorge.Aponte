@@ -5,17 +5,19 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright LearningPatterns Inc.
  */
- 
+
 package gov.irs;
+
+import com.hr.personnel.Employee;
 
 /**
  * The IRS maintains a collection of TaxPayers and collects taxes from them.
- *
+ * <p>
  * Note the interface type TaxPayer, used throughout the class.
  */
 public class IRS {
     // what types of objects can this array contain?
-    private TaxPayer[] payers = new TaxPayer[100];
+    private final TaxPayer[] payers = new TaxPayer[100];
     private int currentIndex = 0;  // for dealing with the array
 
     public void collectTaxes() {
@@ -23,7 +25,7 @@ public class IRS {
             payers[i].payTaxes();
         }
     }
-    
+
     // helper method to add a TaxPayer to the array
     // what types of objects can be passed to this method?
     public void register(TaxPayer payer) {
