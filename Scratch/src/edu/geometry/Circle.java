@@ -9,7 +9,7 @@ public class Circle implements Shape{
 
     @Override
     public void getArea() {
-        double area = pi * getRadius();
+        double area = pi * Math.pow(getRadius(),2);
         System.out.println("The area of your Circle is " + area);
     }
 
