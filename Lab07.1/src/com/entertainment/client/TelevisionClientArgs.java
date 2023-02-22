@@ -13,13 +13,13 @@ import java.util.Arrays;
 
 /**
  * Intended usage (by human):
- *  $ java TelevisionClientArgs <brand> <volume> <display>
- * 
+ * $ java TelevisionClientArgs <brand> <volume> <display>
+ * <p>
  * Example:
- *  $ java TelevisionClientArgs Samsung 32 PLASMA
- *
+ * $ java TelevisionClientArgs Samsung 32 PLASMA
+ * <p>
  * GOAL:
- *  Create an instance of Television with the specifications (values) provided by the user.
+ * Create an instance of Television with the specifications (values) provided by the user.
  */
 class TelevisionClientArgs {
 
@@ -33,7 +33,7 @@ class TelevisionClientArgs {
             String note1 = "Supported displays are " + Arrays.toString(DisplayType.values());
             //String note2 = String.format("Note: Supported brands are %s" + Arrays.toString(Television.VALID_BRANDS));
             String note2 = "Supported brands are " + Arrays.toString(Television.VALID_BRANDS);
-            String note3 = "Volume must be set between " + Television.MIN_VOLUME+"-"+Television.MAX_VOLUME;
+            String note3 = "Volume must be set between " + Television.MIN_VOLUME + "-" + Television.MAX_VOLUME;
 
             System.out.println(usage + "\n" + example + "\n" + note1 + "\n" + note2 + "\n" + note3);
             return;  // early return from main(), application exits

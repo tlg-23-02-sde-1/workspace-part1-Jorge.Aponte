@@ -72,8 +72,7 @@ public class Television {
             oldVolume = getVolume();
             setVolume(0);
             isMuted = true;
-        }
-        else {
+        } else {
             setVolume(oldVolume);
             isMuted = false;
         }
@@ -87,10 +86,9 @@ public class Television {
     // data constraint: must be "Samsung", "LG", "Sony", "Toshiba"
     // would use Enum in real life application since they are set constants.
     public void setBrand(String brand) {
-        if(isValidBrand(brand)) {
+        if (isValidBrand(brand)) {
             this.brand = brand;
-        }
-        else {
+        } else {
             System.out.println("Invalid Brand: " + brand + ", Valid Brands: "
                     + Arrays.toString(VALID_BRANDS));
         }
@@ -104,12 +102,8 @@ public class Television {
         if (volume <= MAX_VOLUME && volume >= MIN_VOLUME) {
             this.volume = volume;
             isMuted = false;
-        }
-        else {
-            System.out.printf("Invalid volume: %s, valid range is %s-%s\n", volume, MIN_VOLUME, MAX_VOLUME );
-
-//            System.out.println("Invalid volume: " + volume + ", valid range is "
-//                    + MIN_VOLUME + "-" + MAX_VOLUME);
+        } else {
+            System.out.printf("Invalid volume: %s, valid range is %s-%s\n", volume, MIN_VOLUME, MAX_VOLUME);
         }
     }
 
@@ -136,15 +130,6 @@ public class Television {
         String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume()); // Ternary Operator
 
         return String.format("Television: brand=%s, volume=%s, Display Type=%s",
-                getBrand(),volumeString,getDisplay());
-//      return "Television: brand=" + getBrand() + ", volume=" + volumeString + ", Display Type=" + getDisplay();
+                getBrand(), volumeString, getDisplay());
     }
-    /*  IF/ELSE Statement for the toString above
-        if (isMuted) {
-            volumeString = "<muted>";
-        }
-        else {
-            volumeString = String.valueOf(getVolume());
-        }
-     */
 }
