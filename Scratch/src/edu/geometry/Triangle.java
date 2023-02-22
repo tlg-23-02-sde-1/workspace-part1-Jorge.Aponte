@@ -1,8 +1,9 @@
 package edu.geometry;
 
-public class Triangle implements Shape{
+public class Triangle implements Shape {
     double height;
     double base;
+    private final int numOfSides = 3;
 
     public Triangle(double height, double base) {
         setHeight(height);
@@ -13,6 +14,11 @@ public class Triangle implements Shape{
     public void getArea() {
         double area = getHeight() * getBase() * half;
         System.out.println("The area of your Triangle is " + area);
+    }
+
+    @Override
+    public void getNumOfSides() {
+        System.out.println(getClass().getSimpleName() + " has " + numOfSides + " sides in it's shape.");
     }
 
     public double getHeight() {

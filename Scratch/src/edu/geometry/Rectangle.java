@@ -1,8 +1,9 @@
 package edu.geometry;
 
-public class Rectangle implements Shape{
+public class Rectangle implements Shape {
     double length;
     double width;
+    private final int numOfSides = 4;
 
     public Rectangle(double length, double width) {
         setLength(length);
@@ -15,6 +16,11 @@ public class Rectangle implements Shape{
         System.out.println("The area of your Rectangle is " + area);
     }
 
+    @Override
+    public void getNumOfSides() {
+        System.out.println(getClass().getSimpleName() + " has " + numOfSides + " sides in it's shape.");
+    }
+
     public double getWidth() {
         return width;
     }
@@ -22,9 +28,11 @@ public class Rectangle implements Shape{
     public void setWidth(double width) {
         if (width > 0.0) {
             this.width = width;
+        } else {
+            System.out.println("Invalid input: " + width + ", Width must be greater than " + min);
         }
-        System.out.println("Invalid input: " + width + ", Width must be greater than " + min);
     }
+
 
     public double getLength() {
         return length;

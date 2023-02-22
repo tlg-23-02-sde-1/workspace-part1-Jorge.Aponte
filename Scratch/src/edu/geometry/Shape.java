@@ -6,4 +6,6 @@ public interface Shape {
     double half = 0.5;
 
     public void getArea();
+
+    public void getNumOfSides();
 }

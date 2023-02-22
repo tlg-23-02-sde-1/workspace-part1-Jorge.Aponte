@@ -20,10 +20,15 @@ public interface TaxPayer {
     // all of these fields are automatically "public static final" due to this being an interface class
     double HOURLY_TAX_RATE = 0.25;
     double SALARIED_TAX_RATE = 0.30;
+    double DEFAULT_STANDARD_DEDUCTION = 7500.00;
 
     public void payTaxes();
 
-    default public void fileReturn(){
+    default public double getStandardDeduction() {
+        return DEFAULT_STANDARD_DEDUCTION;
+    }
+
+    default public void fileReturn() {
         System.out.println("Return file by US Mail");
     }
 }
