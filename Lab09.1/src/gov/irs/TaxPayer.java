@@ -22,4 +22,8 @@ public interface TaxPayer {
     double SALARIED_TAX_RATE = 0.30;
 
     public void payTaxes();
+
+    default public void fileReturn(){
+        System.out.println("Return file by US Mail");
+    }
 }
