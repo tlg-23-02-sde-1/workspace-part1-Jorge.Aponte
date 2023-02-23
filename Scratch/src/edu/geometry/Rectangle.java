@@ -5,7 +5,10 @@ public class Rectangle implements Shape {
     double width;
     private final int numOfSides = 4;
 
-    public Rectangle(double length, double width) {
+    public Rectangle() {
+    }
+
+    public Rectangle(double length, double width) throws InvalidNegativeNumberException {
         setLength(length);
         setWidth(width);
     }
@@ -13,7 +16,7 @@ public class Rectangle implements Shape {
     @Override
     public void getArea() {
         double area = getLength() * getWidth();
-        System.out.println("The area of your Rectangle is " + area);
+        System.out.printf("The area of your Rectangle is %.2f\n", area);
     }
 
     @Override
@@ -25,24 +28,23 @@ public class Rectangle implements Shape {
         return width;
     }
 
-    public void setWidth(double width) {
-        if (width > 0.0) {
-            this.width = width;
-        } else {
-            System.out.println("Invalid input: " + width + ", Width must be greater than " + min);
+    public void setWidth(double width) throws InvalidNegativeNumberException {
+        if (width <= 0.0) {
+            throw new InvalidNegativeNumberException("Invalid input: " + width + ", " +
+                    getClass().getSimpleName() + " Width must be greater than " + min);
         }
+        this.width = width;
     }
-
 
     public double getLength() {
         return length;
     }
 
-    public void setLength(double length) {
-        if (length > 0.0) {
-            this.length = length;
-        } else {
-            System.out.println("Invalid input: " + length + ", Length must be greater than " + min);
+    public void setLength(double length) throws InvalidNegativeNumberException {
+        if (length <= 0.0) {
+            throw new InvalidNegativeNumberException("Invalid input: " + length + ", " +
+                    getClass().getSimpleName() + " Length must be greater than " + min);
         }
+        this.length = length;
     }
 }

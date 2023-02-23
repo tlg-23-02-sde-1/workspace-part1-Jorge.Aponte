@@ -5,7 +5,10 @@ public class Triangle implements Shape {
     double base;
     private final int numOfSides = 3;
 
-    public Triangle(double height, double base) {
+    public Triangle() {
+    }
+
+    public Triangle(double height, double base) throws InvalidNegativeNumberException {
         setHeight(height);
         setBase(base);
     }
@@ -13,7 +16,7 @@ public class Triangle implements Shape {
     @Override
     public void getArea() {
         double area = getHeight() * getBase() * half;
-        System.out.println("The area of your Triangle is " + area);
+        System.out.printf("The area of your Circle is %.2f\n", area);
     }
 
     @Override
@@ -25,23 +28,23 @@ public class Triangle implements Shape {
         return height;
     }
 
-    public void setHeight(double height) {
-        if (height > 0.0) {
-            this.height = height;
-        } else {
-            System.out.println("Invalid input: " + height + ", Height must be greater than " + min);
+    public void setHeight(double height) throws InvalidNegativeNumberException {
+        if (height <= 0.0) {
+            throw new InvalidNegativeNumberException("Invalid input: " + height + ", " +
+                    getClass().getSimpleName() + " Height must be greater than " + min);
         }
+        this.height = height;
     }
 
     public double getBase() {
         return base;
     }
 
-    public void setBase(double base) {
-        if (base > 0) {
-            this.base = base;
-        } else {
-            System.out.println("Invalid input: " + base + ", Base must be greater than " + min);
+    public void setBase(double base) throws InvalidNegativeNumberException {
+        if (base <= 0) {
+            throw new InvalidNegativeNumberException("Invalid input: " + base + ", " +
+                    getClass().getSimpleName() + " Base must be greater than " + min);
         }
+        this.base = base;
     }
 }
