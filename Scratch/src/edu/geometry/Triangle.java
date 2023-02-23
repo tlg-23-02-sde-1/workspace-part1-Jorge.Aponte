@@ -16,7 +16,7 @@ public class Triangle implements Shape {
     @Override
     public void getArea() {
         double area = getHeight() * getBase() * half;
-        System.out.printf("The area of your Circle is %.2f\n", area);
+        System.out.printf("The area of your %s is %.2f\n", getClass().getSimpleName(), area);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Triangle implements Shape {
     public void setHeight(double height) throws InvalidNegativeNumberException {
         if (height <= 0.0) {
             throw new InvalidNegativeNumberException("Invalid input: " + height + ", " +
-                    getClass().getSimpleName() + " Height must be greater than " + min);
+                    getClass().getSimpleName() + "'s height must be greater than " + min + "\n");
         }
         this.height = height;
     }
@@ -43,7 +43,7 @@ public class Triangle implements Shape {
     public void setBase(double base) throws InvalidNegativeNumberException {
         if (base <= 0) {
             throw new InvalidNegativeNumberException("Invalid input: " + base + ", " +
-                    getClass().getSimpleName() + " Base must be greater than " + min);
+                    getClass().getSimpleName() + "'s base must be greater than " + min + "\n");
         }
         this.base = base;
     }

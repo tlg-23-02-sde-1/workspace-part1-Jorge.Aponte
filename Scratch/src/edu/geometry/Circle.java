@@ -14,7 +14,7 @@ public class Circle implements Shape {
     @Override
     public void getArea() {
         double area = pi * Math.pow(getRadius(), 2);
-        System.out.printf("The area of your Circle is %.2f\n", area);
+        System.out.printf("The area of your %s is %.2f\n", getClass().getSimpleName(), area);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Circle implements Shape {
     public void setRadius(double radius) throws InvalidNegativeNumberException {
         if (radius <= 0.0) {
             throw new InvalidNegativeNumberException("Invalid input: " + radius + ", " +
-                    getClass().getSimpleName() + " Radius must be greater than " + min);
+                    getClass().getSimpleName() + "'s radius must be greater than " + min + "\n");
         }
         this.radius = radius;
     }

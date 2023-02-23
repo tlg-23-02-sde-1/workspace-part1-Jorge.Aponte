@@ -16,7 +16,7 @@ public class Rectangle implements Shape {
     @Override
     public void getArea() {
         double area = getLength() * getWidth();
-        System.out.printf("The area of your Rectangle is %.2f\n", area);
+        System.out.printf("The area of your %s is %.2f\n", getClass().getSimpleName(), area);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Rectangle implements Shape {
     public void setWidth(double width) throws InvalidNegativeNumberException {
         if (width <= 0.0) {
             throw new InvalidNegativeNumberException("Invalid input: " + width + ", " +
-                    getClass().getSimpleName() + " Width must be greater than " + min);
+                    getClass().getSimpleName() + "'s width must be greater than " + min + "\n");
         }
         this.width = width;
     }
@@ -43,7 +43,7 @@ public class Rectangle implements Shape {
     public void setLength(double length) throws InvalidNegativeNumberException {
         if (length <= 0.0) {
             throw new InvalidNegativeNumberException("Invalid input: " + length + ", " +
-                    getClass().getSimpleName() + " Length must be greater than " + min);
+                    getClass().getSimpleName() + "'s length must be greater than " + min + "\n");
         }
         this.length = length;
     }
