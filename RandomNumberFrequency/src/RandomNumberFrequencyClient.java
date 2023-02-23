@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 class RandomNumberFrequencyClient {
 
     public static void main(String[] args) {
         RandomNumberFrequency rand1 = new RandomNumberFrequency();
-        ArrayList<Integer> numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
 
         int min = 1;
         int max = 20;
