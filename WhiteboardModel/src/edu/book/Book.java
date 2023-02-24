@@ -17,7 +17,7 @@ public class Book {
     private Integer totalNumOfPages;
     private Integer currentPageNum = MIN_PAGES;
     private Boolean isOpen = false;
-    private Genres genre;
+    private Genre genre;
 
     Scanner in = new Scanner(System.in);
 
@@ -33,7 +33,7 @@ public class Book {
     }
 
     public Book(String title, String authorName, Boolean isOpen,
-                Integer totalNumOfPages, Integer currentPageNum, Genres genre) {
+                Integer totalNumOfPages, Integer currentPageNum, Genre genre) {
         this(title, authorName, isOpen);
         setTotalNumOfPages(totalNumOfPages);
         setCurrentPageNum(currentPageNum);
@@ -197,11 +197,11 @@ public class Book {
         isOpen = open;
     }
 
-    public Genres getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
-    public void setGenre(Genres genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 

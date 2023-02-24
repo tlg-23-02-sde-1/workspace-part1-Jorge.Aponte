@@ -1,7 +1,7 @@
 package edu.book.client;
 
 import edu.book.Book;
-import edu.book.Genres;
+import edu.book.Genre;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ class BookClientArgs {
                     "false 368 250 ADVENTURE";
             String note1 = "Total Number of Pages must be greater than " + Book.MIN_PAGES +
                     " and less than or equal to the Current Page";
-            String note2 = "Supported Genres are " + Arrays.toString(Genres.values());
+            String note2 = "Supported Genres are " + Arrays.toString(Genre.values());
             String note3 = "Current Page must be greater than " + Book.MIN_PAGES + " and less than " +
                     "or equal to the Total Number of Pages";
             System.out.println(usage + "\n" + example + "\n" + note1 + "\n" + note2 + "\n" + note3);
@@ -28,7 +28,7 @@ class BookClientArgs {
         boolean isOpen = Boolean.parseBoolean(args[2]);
         int totalNumOfPages = Integer.parseInt(args[3]);
         int currentPage = Integer.parseInt(args[4]);
-        Genres genre = Genres.valueOf(args[5].toUpperCase());
+        Genre genre = Genre.valueOf(args[5].toUpperCase());
 
         Book book = new Book(title, author, isOpen, totalNumOfPages, currentPage, genre);
 

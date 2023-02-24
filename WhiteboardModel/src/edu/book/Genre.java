@@ -1,6 +1,6 @@
 package edu.book;
 
-public enum Genres {
+public enum Genre {
     ADVENTURE("Adventure"),
     FANTASY("Fantasy"),
     MYSTERY("Mystery"),
@@ -15,7 +15,7 @@ public enum Genres {
 
     private String display;
 
-    Genres(String display) {
+    Genre(String display) {
         this.display = display;
     }
 
