@@ -11,7 +11,6 @@ package com.javatunes.catalog.test;
 import com.javatunes.catalog.InMemoryCatalog;
 import com.javatunes.catalog.MusicCategory;
 import com.javatunes.catalog.MusicItem;
-import jdk.jfr.Category;
 
 import java.util.Collection;
 import java.util.Map;
