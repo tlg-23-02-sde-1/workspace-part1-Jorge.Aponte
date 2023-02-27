@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DuckRace/DuckRace.iml" filepath="$PROJECT_DIR$/DuckRace/DuckRace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaJeopardyRankedResults/JavaJeopardyRankedResults.iml" filepath="$PROJECT_DIR$/JavaJeopardyRankedResults/JavaJeopardyRankedResults.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab01.1/Lab01.1.iml" filepath="$PROJECT_DIR$/Lab01.1/Lab01.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab02.02/Lab02.02.iml" filepath="$PROJECT_DIR$/Lab02.02/Lab02.02.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab02.2_BAK/Lab02.2_BAK.iml" filepath="$PROJECT_DIR$/Lab02.2_BAK/Lab02.2_BAK.iml" />
@@ -12,6 +14,13 @@
       <module fileurl="file://$PROJECT_DIR$/Lab08.1/Lab08.1.iml" filepath="$PROJECT_DIR$/Lab08.1/Lab08.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab08.2/Lab08.2.iml" filepath="$PROJECT_DIR$/Lab08.2/Lab08.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab09.1/Lab09.1.iml" filepath="$PROJECT_DIR$/Lab09.1/Lab09.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab10-Extra/Lab10-Extra.iml" filepath="$PROJECT_DIR$/Lab10-Extra/Lab10-Extra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab10.1/Lab10.1.iml" filepath="$PROJECT_DIR$/Lab10.1/Lab10.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab10.1-Television/Lab10.1-Television.iml" filepath="$PROJECT_DIR$/Lab10.1-Television/Lab10.1-Television.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab11-Extra/Lab11-Extra.iml" filepath="$PROJECT_DIR$/Lab11-Extra/Lab11-Extra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab11-Extra-With-Stream/Lab11-Extra-With-Stream.iml" filepath="$PROJECT_DIR$/Lab11-Extra-With-Stream/Lab11-Extra-With-Stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab11.1/Lab11.1.iml" filepath="$PROJECT_DIR$/Lab11.1/Lab11.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab12.1/Lab12.1.iml" filepath="$PROJECT_DIR$/Lab12.1/Lab12.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/MiniLab05.1/MiniLab05.1.iml" filepath="$PROJECT_DIR$/MiniLab05.1/MiniLab05.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/MiniLab08.1/MiniLab08.1.iml" filepath="$PROJECT_DIR$/MiniLab08.1/MiniLab08.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/RandomNumberFrequency/RandomNumberFrequency.iml" filepath="$PROJECT_DIR$/RandomNumberFrequency/RandomNumberFrequency.iml" />
@@ -19,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/VolumePresets/VolumePresets.iml" filepath="$PROJECT_DIR$/VolumePresets/VolumePresets.iml" />
       <module fileurl="file://$PROJECT_DIR$/VolumePresets_Jorge/VolumePresets_Jorge.iml" filepath="$PROJECT_DIR$/VolumePresets_Jorge/VolumePresets_Jorge.iml" />
       <module fileurl="file://$PROJECT_DIR$/WhiteboardModel/WhiteboardModel.iml" filepath="$PROJECT_DIR$/WhiteboardModel/WhiteboardModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WhiteboardModel_Jorge_Reviewed/WhiteboardModel_Jorge_Reviewed.iml" filepath="$PROJECT_DIR$/WhiteboardModel_Jorge_Reviewed/WhiteboardModel_Jorge_Reviewed.iml" />
     </modules>
   </component>
 </project>
